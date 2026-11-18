@@ -1,6 +1,6 @@
 #CONSTANTES
 
-CANTIDAD = 30
+CANTIDAD = 2
 DIGITOS = "0123456789"
 LETRAS = ("abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ")
 GENEROS = ("F", "M", "X")
@@ -49,9 +49,9 @@ def copiar_lista(lista:list, cantidad:int)->list:
     return copia
 
 
-def intercambiar(lista:list, i:int, j:int)-> None:
+def intercambiar(lista:list, i:int, j:int)-> None: 
     """
-    Intercambia los elementos de las posiciones i y j.
+    Intercambia los elementos de las posiciones i y j. (lo uso para ordenar por promedio)
  
     """
     auxiliar = lista[i]
@@ -141,9 +141,9 @@ def cargar_legajos(legajos:list):
         while not valido:
             texto = input(f"Legajo del estudiante {i + 1}: ")
             if not validar_legajo(texto):
-                print("  Error: número de legajo inválido.")
+                print("Error: número de legajo inválido.")
             elif legajo_repetido(legajos, i, int(texto)):
-                print("  Error: ese legajo ya fue cargado.")
+                print("Error: ese legajo ya fue cargado.")
             else:
                 legajos[i] = int(texto)
                 valido = True
@@ -162,7 +162,7 @@ def cargar_nombres(nombres:list):
                 nombres[i] = texto
                 valido = True
             else:
-                print("  Error: solo se admiten letras y espacios.")
+                print("Error: solo se admiten letras y espacios.")
 
 
 def cargar_generos(generos:list):
@@ -178,7 +178,7 @@ def cargar_generos(generos:list):
                 generos[i] = convertir_a_mayus(texto)
                 valido = True
             else:
-                print("  Error: el género debe ser F, M o X.")
+                print("Error: el género debe ser F, M o X.")
 
 
 def cargar_notas(notas:list, nombre_parcial:str):
@@ -195,7 +195,7 @@ def cargar_notas(notas:list, nombre_parcial:str):
                 notas[i] = int(texto)
                 valido = True
             else:
-                print("  Error: la nota debe ser un número entero entre 1 y 10.")
+                print("Error: la nota debe ser un número entero entre 1 y 10.")
 
 
 def cargar_datos_prueba(legajos: list, nombres: list, generos: list, parcial1: list, parcial2: list):
